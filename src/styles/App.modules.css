@@ -7,6 +7,8 @@
 #root {
     display: flex;
     justify-content: center;
+    position: relative;
+
 }
 
 .App {
@@ -25,3 +27,36 @@
 .title {
     text-align: center;
 }
+
+/* START TransitionGroup_____________________________ */
+.remove-btn {
+    margin-right: 0.5rem;
+}
+
+.post-enter {
+    transform: translate(-850px);
+}
+
+.post-enter-active {
+    transform: translate(0px);
+    transition: all 500ms ease-in;
+}
+
+.post-exit {
+    opacity: 1;
+}
+
+.post-exit-active {
+    transform: translate(-850px);
+    transition: all 500ms ease-in;
+}
+
+/* END TransitionGroup_____________________________ */
+
+/* START Loader ---------------------------------- */
+.loadingWait {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px
+}
+/* END Loader ---------------------------------- */
