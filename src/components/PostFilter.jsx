@@ -11,7 +11,7 @@ const PostFilter = ({ filter, setFilter }) => {
                 // type="text"
                 placeholder="Поиск..."
             />
-            <MySelect
+            <MySelect 
                 value={filter.sort}
                 onChange={selectedSort => setFilter({ ...filter, sort: selectedSort })}
                 defaultValue="Сортировка по..."

@@ -1,17 +1,24 @@
 import React from 'react';
 import MyButton from './UI/button/MyButton';
+import {useHistory}
 
 const PostItem = (props) => {
+
+    const router = useHistory()
+
     return (
         <div className="post">
             <div className="post_content">
-                <strong>{props.number}. {props.post.title}</strong>
+                <strong>{props.post.id}. {props.post.title}</strong>
                 <div>
                     {props.post.body}
                 </div>
             </div>
             <div className="post_btns">
-                <MyButton onClick={() => props.remove (props.post)}>Удалить</MyButton>
+
+                <MyButton onClick={() => props.remove(props.post)}>Открыть</MyButton>
+
+                <MyButton onClick={() => props.remove(props.post)}>Удалить</MyButton>
             </div>
         </div>
     );

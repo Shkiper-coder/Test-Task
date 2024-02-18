@@ -6,8 +6,8 @@
 
 #root {
     display: flex;
-    justify-content: center;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
 
 }
 
@@ -23,6 +23,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.post_btns {
+    display: flex
+}
+
 
 .title {
     text-align: center;
@@ -59,4 +64,40 @@
     justify-content: center;
     margin-top: 100px
 }
+
 /* END Loader ---------------------------------- */
+
+/*  START pages ---------------------------------- */
+.page_wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    padding: 10px 15px;
+    border: 1px solid teal;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.page_current {
+    border: 2px solid orange;
+    font-weight: bold;
+}
+
+/* END pages ---------------------------------- */
+
+.navbar {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: bisque;
+}
+
+.navbar_links {
+    margin-left: auto;
+}
