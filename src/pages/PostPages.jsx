@@ -23,6 +23,7 @@ function PostPages() {
     // =========номер текущей страницы========
     const [page, setPage] = useState(1)
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+    
     const [fetchPosts, isPostLoading, postError] = useFetching(async (limit, page) => {
         const response = await PostService.getAll(limit, page)
         setPosts(response.data)
