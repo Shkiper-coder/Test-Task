@@ -11,13 +11,13 @@ const PostIdPage = () => {
     const goBack = () => navigate(-1)
 
     const params = useParams()
-
+    // запрос на полученеи поста
     const [post, setPost] = useState({})
     const [fetchPostById, IsLoading, error] = useFetching(async (id) => {
         const response = await PostService.getById(id)
         setPost(response.data)
     }, [])
-
+    // запрос на полученеи комментариев 
     const [comments, setComments] = useState([])
     const [fetchComments, isComLoading, comError] = useFetching(async (id) => {
         const response = await PostService.getCommetnsByPostId(id)
@@ -29,22 +29,27 @@ const PostIdPage = () => {
         fetchComments(params.id)
     }, [])
 
+    console.log(comments)
+
     return (
         <div>
             <h1>Вы открыли страницу поста с ID №{params.id}</h1>
             <hr style={{ margin: "15px 0px" }} />
+            <h1>Name</h1>
+            <br/>
             {IsLoading
                 ? <div><Loader /></div>
                 : <div>{post.id}. {post.title}</div>
             }
+             <br/>
             <h1>Comments</h1>
             {isComLoading
                 ? <div><Loader /></div>
                 : <div>
-                    {comments.map(com =>
+                    {comments.map(MorozovParty =>
                         <div>
-                            <h5>{com.email}</h5>
-                            <div>{com.body}</div>
+                            <h5>{MorozovParty.email}</h5>
+                            <div>{MorozovParty.body}</div>
                         </div>
                     )}
                 </div>
