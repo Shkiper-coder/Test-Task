@@ -46,10 +46,10 @@ const PostIdPage = () => {
             {isComLoading
                 ? <div><Loader /></div>
                 : <div>
-                    {comments.map(MorozovParty =>
+                    {comments.map(comm =>
                         <div>
-                            <h5>{MorozovParty.email}</h5>
-                            <div>{MorozovParty.body}</div>
+                            <h5>{comm.email}</h5>
+                            <div>{comm.body}</div>
                         </div>
                     )}
                 </div>
